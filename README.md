@@ -2,35 +2,39 @@
 
 Help you get rid of Physical Chemistry Experiment in CCME!
 
-I'm Zhaoyang Li. Welcome to my program!
+## Package Requirements
 
-
-# Package Requirements
-
+```
 pip install sympy
+```
 
+## Define equation: ``string = expression``
 
-# Define equation: 'string = expression'
+``string`` is the name of what you want to calculate.
 
-'string' is the name of what you want to calculate.
-'expression' is a formula written in Python format.
+``expression`` is a formula written in ``Python`` format.
 
 eg.
 
+```
 equation = [x.strip() for x in
             'W = (-Q_V*m-Q_N-Q_M)/Dt-rho*V*C'
             .split('=')]
+```
 
+## Define variable: ``('symbol = mu +- sigma', string)``
 
-# Define variable: ('symbol = mu +- sigma', 'string')
+``symbol`` is a temporary abbreviation of each variable, which should be consistent with ``expression``, and will not exist in output.
 
-'symbol' is a temporary abbreviation of each variable, which should be consistent with 'expression', and will not exist in output.
-'mu' is the expectation of each variable.
-'sigma' is the standard deviation of each variable.
-'string' is the name of each variable.
+``mu`` is the expectation of each variable.
+
+``sigma`` is the standard deviation of each variable.
+
+``string`` is the name of each variable.
 
 eg.
 
+```
 variable = [
     ('Q_V = -26.414 +- 0', 'Q_V'),
     ('m = 0.9547 +- 0.0004/sqrt(3)', 'm'),
@@ -41,52 +45,58 @@ variable = [
     ('C = 4.1824e-3 +- 0', 'C_\\ce{H2O}'),
     ('Dt = 1.770 +- 0.009', '\\Delta T')
 ]
+```
 
-
-# Set digits of results: {'mu': integer, 'sigma': integer}
+## Set digits of results: ``{'mu': integer, 'sigma': integer}``
 
 eg.
 
+```
 result_digit = {'mu': 4,
                 'sigma': 2}
+```
 
+## Set units of results: ``result_unit = string``
 
-# Set units of results: result_unit = 'string'
-
-'string' is a unit written in LaTeX format, which should be set to 1 if what you want to calculate is dimensionless.
+``string`` is a unit written in $\LaTeX$ format, which should be set to 1 if what you want to calculate is dimensionless.
 
 eg.
 
+```
 result_unit = '\\text{kJ}/{}^\\circ\\text{C}'
+```
 
-
-# Separate equation or not: separate = 0 or 1
+## Separate equation or not: ``separate = 0 or 1``
 
 eg.
 
+```
 separate = 1
+```
 
-
-# Insert numbers or not: insert = 0 or 1
+## Insert numbers or not: ``insert = 0 or 1``
 
 eg.
 
+```
 insert = 1
+```
 
-
-# Include equation number or not: include_equation_number = 0 or 1
+## Include equation number or not: ``include_equation_number = 0 or 1``
 
 eg.
 
+```
 include_equation_number = 1
+```
 
+## Output
 
-# Output
-
-LaTeX code of calculation details, including normal calculation, each partial derivative, total uncertainty combination, and the final result.
+$\LaTeX$ code of calculation details, including normal calculation, each partial derivative, total uncertainty combination, and the final result.
 
 eg.
 
+```
 \begin{equation}
 W=- C_\ce{H2O} V \rho_\ce{H2O} + \frac{- Q_\text{cotton} - Q_\ce{Ni} - Q_V m}{\Delta T}=- \left(0.0041824\right) \times \left(3000\right) \times \left(0.99865\right) + \frac{- \left(-0.01\right) - \left(-0.323\right) - \left(-26.414\right) \times \left(0.9547\right)}{\left(1.77\right)}=1.905\ \text{kJ}/{}^\circ\text{C}
 \end{equation}
@@ -113,10 +123,10 @@ W=- C_\ce{H2O} V \rho_\ce{H2O} + \frac{- Q_\text{cotton} - Q_\ce{Ni} - Q_V m}{\D
 \begin{equation}
 W=\left (1.905 \pm 0.073 \right )\ \text{kJ}/{}^\circ\text{C}
 \end{equation}
+```
 
+## Acknowledgements
 
+``Sympy``: https://github.com/sympy/sympy
 
-# Acknowledgements
-Sympy: https://github.com/sympy/sympy
-
-LaTeX公式编辑器: https://latexlive.com
+$\LaTeX$公式编辑器: https://latexlive.com
