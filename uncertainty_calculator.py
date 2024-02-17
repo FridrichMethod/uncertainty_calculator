@@ -12,18 +12,18 @@ def latex_number(expr):
 
 # Define equation
 equation = [x.strip() for x in
-            '\\zeta = (K*pi*eta*u*l)/(4*pi*phi*e_0*e_r)'
+            r'\zeta = (K*pi*eta*u*l)/(4*pi*phi*e_0*e_r)'
             .split('=')]
 
 # Define variable
 variable = [
-    ('K = 4 +- 0', 'K'),
-    ('eta = 0.9358e-3 +- 0.0001/sqrt(3)', '\\eta'),
-    ('u = 3.68e-5 +- 0.11e-5', 'u'),
-    ('l = 0.2256 +- 0.0019', 'l'),
-    ('phi = 100 +- 1/sqrt(3)', '\\varphi'),
-    ('e_0 = 8.8541878128e-12 +- 0', '\\varepsilon_0'),
-    ('e_r = 78.7 +- 0.1/sqrt(3)', '\\varepsilon_\\text{r}'),
+    ('K = 4 +- 0', r'K'),
+    ('eta = 0.9358e-3 +- 0.0001/sqrt(3)', r'\eta'),
+    ('u = 3.68e-5 +- 0.11e-5', r'u'),
+    ('l = 0.2256 +- 0.0019', r'l'),
+    ('phi = 100 +- 1/sqrt(3)', r'\varphi'),
+    ('e_0 = 8.8541878128e-12 +- 0', r'\varepsilon_0'),
+    ('e_r = 78.7 +- 0.1/sqrt(3)', r'\varepsilon_\text{r}'),
 ]
 
 # Set digits of results
@@ -31,7 +31,7 @@ result_digit = {'mu': 3,
                 'sigma': 3}
 
 # Set units of results
-result_unit = '\\si{V}'
+result_unit = r'\si{V}'
 
 # Print separately or integrally
 separate = 0
