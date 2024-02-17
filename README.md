@@ -4,8 +4,14 @@ Help you get rid of Physical Chemistry Experiment in CCME!
 
 ## Package Requirements
 
-```python
+```shell
 pip install sympy
+```
+
+or
+
+```shell
+conda install -c conda-forge sympy
 ```
 
 ## Define equation: ``string = expression``
