@@ -14,29 +14,31 @@ or
 conda install -c conda-forge sympy
 ```
 
-## Define equation: ``string = expression``
+## Define equation: `string = expression`
 
-``string`` is the name of what you want to calculate.
+`string` is the name of what you want to calculate.
 
-``expression`` is a formula written in ``Python`` format.
+`expression` is a formula written in `Python` format.
 
 eg.
 
 ```python
-equation = [x.strip() for x in
-            r'W = (-Q_V*m-Q_N-Q_M)/Dt-rho*V*C'
-            .split('=')]
+equation = [
+    x.strip() for x in
+    r'W = (-Q_V*m-Q_N-Q_M)/Dt-rho*V*C'
+    .split('=')
+]
 ```
 
-## Define variable: ``('symbol = mu +- sigma', string)``
+## Define variable: `('symbol = mu +- sigma', string)`
 
-``symbol`` is a temporary abbreviation of each variable, which should be consistent with ``expression``, and will not exist in output.
+`symbol` is a temporary abbreviation of each variable, which should be consistent with `expression`, and will not exist in output.
 
-``mu`` is the expectation of each variable.
+`mu` is the expectation of each variable.
 
-``sigma`` is the standard deviation of each variable.
+`sigma` is the standard deviation of each variable.
 
-``string`` is the name of each variable.
+`string` is the name of each variable.
 
 eg.
 
@@ -49,22 +51,24 @@ variable = [
     ('rho = 0.99865 +- 0', r'\rho_\ce{H2O}'),
     ('V = 3000 +- 0.01', r'V'),
     ('C = 4.1824e-3 +- 0', r'C_\ce{H2O}'),
-    ('Dt = 1.770 +- 0.009', r'\Delta T')
+    ('Dt = 1.770 +- 0.009', r'\Delta T'),
 ]
 ```
 
-## Set digits of results: ``{'mu': integer, 'sigma': integer}``
+## Set digits of results: `{'mu': integer, 'sigma': integer}`
 
 eg.
 
 ```python
-result_digit = {'mu': 4,
-                'sigma': 2}
+result_digit = {
+    'mu': 4,
+    'sigma': 2,
+}
 ```
 
-## Set units of results: ``result_unit = string``
+## Set units of results: `result_unit = string`
 
-``string`` is a unit written in $\LaTeX$ format, which should be set to 1 if what you want to calculate is dimensionless.
+`string` is a unit written in $\LaTeX$ format, which should be set to 1 if what you want to calculate is dimensionless.
 
 eg.
 
@@ -72,7 +76,7 @@ eg.
 result_unit = r'\text{kJ}/{}^\circ\text{C}'
 ```
 
-## Separate equation or not: ``separate = 0 or 1``
+## Separate equation or not: `separate = 0 or 1`
 
 eg.
 
@@ -80,7 +84,7 @@ eg.
 separate = 1
 ```
 
-## Insert numbers or not: ``insert = 0 or 1``
+## Insert numbers or not: `insert = 0 or 1`
 
 eg.
 
@@ -88,7 +92,7 @@ eg.
 insert = 1
 ```
 
-## Include equation number or not: ``include_equation_number = 0 or 1``
+## Include equation number or not: `include_equation_number = 0 or 1`
 
 eg.
 
@@ -133,6 +137,6 @@ W=\left (1.905 \pm 0.073 \right )\ \text{kJ}/{}^\circ\text{C}
 
 ## Acknowledgements
 
-``Sympy``: <https://github.com/sympy/sympy>
+`Sympy`: <https://github.com/sympy/sympy>
 
 $\LaTeX$公式编辑器: <https://latexlive.com>
