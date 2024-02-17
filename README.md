@@ -1,10 +1,10 @@
-# Uncertainty-Calculator
+# Uncertainty Calculator
 
 Help you get rid of Physical Chemistry Experiment in CCME!
 
 ## Package Requirements
 
-```
+```python
 pip install sympy
 ```
 
@@ -16,9 +16,9 @@ pip install sympy
 
 eg.
 
-```
+```python
 equation = [x.strip() for x in
-            'W = (-Q_V*m-Q_N-Q_M)/Dt-rho*V*C'
+            r'W = (-Q_V*m-Q_N-Q_M)/Dt-rho*V*C'
             .split('=')]
 ```
 
@@ -34,16 +34,16 @@ equation = [x.strip() for x in
 
 eg.
 
-```
+```python
 variable = [
-    ('Q_V = -26.414 +- 0', 'Q_V'),
-    ('m = 0.9547 +- 0.0004/sqrt(3)', 'm'),
-    ('Q_N = -0.323 +- 3.243*0.0004/sqrt(3)', 'Q_\\ce{Ni}'),
-    ('Q_M = -0.01 +- 0.0002*16.736/sqrt(3)', 'Q_\\text{cotton}'),
-    ('rho = 0.99865 +- 0', '\\rho_\\ce{H2O}'),
-    ('V = 3000 +- 0.01', 'V'),
-    ('C = 4.1824e-3 +- 0', 'C_\\ce{H2O}'),
-    ('Dt = 1.770 +- 0.009', '\\Delta T')
+    ('Q_V = -26.414 +- 0', r'Q_V'),
+    ('m = 0.9547 +- 0.0004/sqrt(3)', r'm'),
+    ('Q_N = -0.323 +- 3.243*0.0004/sqrt(3)', r'Q_\ce{Ni}'),
+    ('Q_M = -0.01 +- 0.0002*16.736/sqrt(3)', r'Q_\text{cotton}'),
+    ('rho = 0.99865 +- 0', r'\rho_\ce{H2O}'),
+    ('V = 3000 +- 0.01', r'V'),
+    ('C = 4.1824e-3 +- 0', r'C_\ce{H2O}'),
+    ('Dt = 1.770 +- 0.009', r'\Delta T')
 ]
 ```
 
@@ -51,7 +51,7 @@ variable = [
 
 eg.
 
-```
+```python
 result_digit = {'mu': 4,
                 'sigma': 2}
 ```
@@ -62,15 +62,15 @@ result_digit = {'mu': 4,
 
 eg.
 
-```
-result_unit = '\\text{kJ}/{}^\\circ\\text{C}'
+```python
+result_unit = r'\text{kJ}/{}^\circ\text{C}'
 ```
 
 ## Separate equation or not: ``separate = 0 or 1``
 
 eg.
 
-```
+```python
 separate = 1
 ```
 
@@ -78,7 +78,7 @@ separate = 1
 
 eg.
 
-```
+```python
 insert = 1
 ```
 
@@ -86,7 +86,7 @@ insert = 1
 
 eg.
 
-```
+```python
 include_equation_number = 1
 ```
 
@@ -96,7 +96,7 @@ $\LaTeX$ code of calculation details, including normal calculation, each partial
 
 eg.
 
-```
+```latex
 \begin{equation}
 W=- C_\ce{H2O} V \rho_\ce{H2O} + \frac{- Q_\text{cotton} - Q_\ce{Ni} - Q_V m}{\Delta T}=- \left(0.0041824\right) \times \left(3000\right) \times \left(0.99865\right) + \frac{- \left(-0.01\right) - \left(-0.323\right) - \left(-26.414\right) \times \left(0.9547\right)}{\left(1.77\right)}=1.905\ \text{kJ}/{}^\circ\text{C}
 \end{equation}
@@ -127,6 +127,6 @@ W=\left (1.905 \pm 0.073 \right )\ \text{kJ}/{}^\circ\text{C}
 
 ## Acknowledgements
 
-``Sympy``: https://github.com/sympy/sympy
+``Sympy``: <https://github.com/sympy/sympy>
 
-$\LaTeX$公式编辑器: https://latexlive.com
+$\LaTeX$公式编辑器: <https://latexlive.com>
